@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>practice-3</title>
+ <style>
+ body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+ background: #ADD8E6;
+ }
+ .grid-container {
+ display: grid;
+ grid-template-columns: repeat(4, 50px);
+ grid-auto-rows: 50px;
+ gap: 15px;
+ }
+ .grid-item {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: #95D4FF8A;
+ border-radius: 10px;
+ text-align: center;
+ color: #007FFF80;
+ font-size: 20px;
+ box-shadow: inset #00000038 -5px -5px 5px, inset #FFFFFFA3 5px 5px 5px;
+ backdrop-filter: blur(14px);
+ border: none;
+ }
+ .grid-item:hover {
+ background-color: #95D4FFD4;
+ box-shadow: inset #00000038 -2px -2px 5px, inset #FFFFFFA3 2px 2px 5px;
+ backdrop-filter: blur(14px);
+ }
+ .container {
+ position: relative;
+ background: linear-gradient(90deg, transparent, 70%, #fff);
+ padding: 30px;
+ border-radius: 0 30px 30px 0;
+ box-shadow: 25px 2px 15px #00000029;
+ }
+ .inp-out {
+ font-size: 30px;
+ text-align: right;
+ padding: 0 10px 0 0;
+ height: 30px;
+ width: 240px;
+ margin-top: 30px;
+ overflow: hidden;
+ }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <div class="inp-out" id="output">0</div>
+ <br><br>
+ <div class="grid-container">
+ <button class="grid-item" onclick="vaalue('C')">C</button>
+ <button class="grid-item" onclick="vaalue('del')">DEL</button>
+ <button class="grid-item" onclick="vaalue('/')">/</button>
+ <button class="grid-item" onclick="vaalue('*')">*</button>
+ <button class="grid-item" onclick="vaalue(7)">7</button>
+ <button class="grid-item" onclick="vaalue(8)">8</button>
+ <button class="grid-item" onclick="vaalue(9)">9</button>
+ <button class="grid-item" onclick="vaalue('-')">-</button>
+ <button class="grid-item" onclick="vaalue(4)">4</button>
+ <button class="grid-item" onclick="vaalue(5)">5</button>
+ <button class="grid-item" onclick="vaalue(6)">6</button>
+ <button class="grid-item" onclick="vaalue('+')">+</button>
+ <button class="grid-item" onclick="vaalue(1)">1</button>
+ <button class="grid-item" onclick="vaalue(2)">2</button>
+ <button class="grid-item" onclick="vaalue(3)">3</button>
+ <button class="grid-item" onclick="vaalue('00')">00</button>
+ <button class="grid-item" onclick="vaalue(0)">0</button>
+ <button class="grid-item" onclick="vaalue('.')">•</button>
+ <div class="grid-item" style="grid-row: 4/6;grid-column:4;"
+onclick="vaalue('=')">=</div>
+ </div>
+ </div>
+ <script>
+ let outPut = document.getElementById("output");
+ var result = '';
+ function vaalue(v) {
+ if (v == '=') {
+ result = eval(result);
+ }
+ else if (v == 'C') {
+ result = 0;
+ }
+ else if (v == 'del') {
+ result = result.slice(0, -1);
+ }
+ else {
+ result += String(v);
+ }
+ outPut.innerHTML = result;
+ }
+ </script>
+</body>
+</html> 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>practice-1</title>
+    <style>
+      body {
+        color: #ffffff;
+        background: linear-gradient(45deg, #1a01ff, #ff00ff 70%);
+        min-height: 100vh;
+      }
+      .a {
+        height: 5px;
+      }
+
+      .container {
+        margin: 59px auto;
+        max-width: 400px;
+        padding: 30px;
+        border: 3px solid;
+        border-image: linear-gradient(35deg, transparent, #fff, transparent) 1;
+      }
+      ::placeholder {
+        color: #ffff;
+      }
+      form {
+        text-align: center;
+      }
+      input, select,
+      textarea,button {
+        font-size: 18px;
+        width: 90%;
+        padding: 15px 25px;
+        border: none;
+        box-shadow: inset 1px 1px 1px, inset -1px -1px 1px #3333336b,
+          0 1px 15px #60606749;
+        border-radius: 35px;
+        box-sizing: border-box;
+        background: #c2b8b82b;
+        color: #ffffff;
+      }
+
+      img {
+        display: block;
+        width: 50%;
+        height: auto;
+        margin: 10px auto;
+      }
+      button {
+        cursor: pointer;
+        width: 200px;
+        position: relative;
+        left: -15%;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
+      th, td{
+        padding: 10px;
+        text-overflow: ellipsis;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="a"></div>
+    <div class="container">
+      <form onsubmit="return false">
+        <img src="/images/welcome.png" alt="welcome" /><br />
+        <p>
+          <input type="text" id="name" name="name" placeholder="Name" required/>
+        </p>
+        <p>
+          <input type="email" id="email" name="email" placeholder="Email" required/>
+        </p>
+        <p>
+          <select id="gender" name="gender" required>
+            <option value="">Select your gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </p>
+        <p>
+          <button onclick="updateTable()">Submit</button>
+        </p>
+      </form>
+    </div>
+    <hr />
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+      </tr>
+      <tr>
+        <td>Avishnash Chavan</td>
+        <td>avichavn1573@gmail.com</td>
+        <td>Male</td>
+      </tr>
+    </table>
+
+    <script>
+      function updateTable() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let gender = document.getElementById("gender").value;
+        let newRow = `
+    <tr>
+      <td>${name}</td>
+      <td>${email}</td>
+      <td>${gender}</td>
+    </tr>
+  `;
+
+        let table = document.querySelector("table");
+        let row = document.createElement("tr");
+        row.innerHTML = newRow;
+        table.appendChild(row);
+      }
+    </script>
+  </body>
+</html>

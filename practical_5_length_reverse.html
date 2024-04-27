@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+
+    }
+
+    * {
+      font-size: 20px;
+    }
+
+    input {
+      outline: none;
+      border: none;
+      margin: 10px;
+      padding: 5px; 
+      border-bottom: solid;
+      text-align: center;
+      border-image: linear-gradient(90deg, transparent, #000000, transparent) 1;
+      
+    }
+    
+    input:hover {
+      border-image: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="text" id="string" oninput="lengTH()" placeholder="String...">
+  <label for="lgth">Length of String:</label>
+  <span id="lgth">0</span>
+<br><hr width="100%"><br>
+  <input type="number" id="num" oninput="reverse()" placeholder="Number..." />
+  <label for="rvs">Reversed Number: </label>
+  <span id="rvs">0</span>
+
+  <script>
+    function lengTH() {
+      let Str = document.getElementById("string").value;
+      document.getElementById("lgth").innerHTML = Str.length;
+    }
+
+    function reverse() {
+      let Num = document.getElementById("num").value;
+      rev=Num.toString().split("").reverse().join("")
+      document.getElementById("rvs").innerHTML = rev;
+    }
+  </script>
+</body>
+
+</html>

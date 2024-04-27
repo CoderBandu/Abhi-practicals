@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CESA - Computer Engineering Students Association</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    p {
+      padding: 20px;
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .image-link {
+      display: block;
+      margin: 0 auto;
+      width: 25%;
+    }
+
+    .code-font {
+      font-family: monospace;
+    }
+
+    #top-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Welcome to CESA!</h1>
+  </header>
+
+  <main>
+    <img src="/images/cesa.jpg" alt="CESA logo" class="image-link" onclick="window.location.href='other_page.html'">
+    <h2>Computer Engineering Students Association</h2>
+    <p>
+    <p>The <i>Computer Engineering Students Association (CESA)</i> is a student-run organization dedicated to fostering a vibrant and supportive community for computer engineering students at <b>Government College Of Engineering, Yavatmal.</b> We provide opportunities for our members to:</p>
+    <ul>
+
+      <li>Network with industry professionals and explore career opportunities.</li>
+      <li>Connect with fellow students and build lasting friendships.</li>
+      <li>Expand their knowledge and skills through workshops, guest lectures, and industry visits.</li>
+      <li>Participate in hackathons, coding competitions, and other exciting events.</li>
+      <li>Develop their leadership and communication skills through volunteer opportunities and social events.</li>
+    </ul>
+    Whether you're a seasoned programmer or just starting your journey in the world of computer engineering, CESA welcomes you with open arms. We encourage you to explore our website, attend our events, and get involved!
+    </p>
+    <p class="code-font">Join our community and unlock your potential in the exciting world of computer engineering!</p>
+  </main>
+
+  <footer id="top-link">
+    <a href="#top"><img style="border-radius: 50%; position: fixed; bottom: 20px;right: 20px;" height="50px" src="/images/top.png" alt=""></a>
+    <input type="color" name="color" id="color" onchange="clrChange()" style="margin: 20px">
+    <br>
+    <label for="color">select color from a color picker to change background color</label>
+  </footer>
+  <script>
+    function clrChange() {
+      document.body.style.background = document.getElementById('color').value
+    }
+  </script>
+</body>
+
+</html>

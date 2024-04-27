@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>practical-6</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+      }
+
+      input {
+        outline: none;
+        border: none;
+        margin: 10px;
+        padding: 5px;
+        text-align: center;
+        border-bottom: solid 2px;
+      }
+      button {
+        padding: 15px;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        background: linear-gradient(45deg, #5306edc1, #ff00c886);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Find Prime Number</h2>
+    <div>
+      <div>
+        <sub>Starting Number :</sub>
+        <input type="number" id="start" placeholder="Starting Number..." />
+      </div>
+
+      <div>
+        <sub>Ending Number :</sub>
+        <input type="number" id="end" placeholder="Ending Number..." />
+      </div>
+      <br />
+
+      <button type="submit" onclick="Prime()">Find Prime</button>
+    </div>
+
+    <div>
+      <label for="list">Prime Numbers between are:</label>
+      <br />
+      <span id="list"></span>
+    </div>
+
+    <script>
+      var start = document.getElementById("start");
+      var end = document.getElementById("end");
+
+      function Prime() {
+        end = end.value;
+        start = start.value;
+
+        for (var i = start; i <= end; i++) {
+          var isprm = true;
+          for (var j = 2; j < i; j++) {
+            if (i % j == 0) {
+              isprm = false;
+              break;
+            }
+          }
+          if (isprm && i) {
+            document.getElementById("list").innerHTML += i + ", ";
+          }
+        }
+      }
+
+      let container = document.querySelector("button");
+      let degrees = 0;
+      function rotateContainer() {
+        degrees = (degrees + 1) % 360;
+        container.style.transition = `background 15s`;
+        container.style.background = `linear-gradient(${degrees}deg, #5306edc1,#ff00c886)`;
+
+        requestAnimationFrame(rotateContainer);
+      }
+      rotateContainer();
+    </script>
+  </body>
+</html>
